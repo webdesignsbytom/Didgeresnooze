@@ -1,4 +1,6 @@
-﻿using Microsoft.Extensions.Logging;
+﻿using Didgeresnooze.View.Main;
+using Didgeresnooze.ViewModel.Main;
+using Microsoft.Extensions.Logging;
 
 namespace Didgeresnooze
 {
@@ -15,6 +17,8 @@ namespace Didgeresnooze
                     fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
                 });
 
+            builder.Services.AddSingleton<MainPage>();
+            builder.Services.AddSingleton<MainPageViewModel>();
 #if DEBUG
     		builder.Logging.AddDebug();
 #endif
